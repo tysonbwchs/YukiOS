@@ -1923,11 +1923,7 @@ export const appMap = {
   icon: "https://nzp-team.github.io/nzportable.ico",
   title: "NZ: Portable",
   skipRewrite: true
-},
-bo1: {
-  type: "game",
-  url: "https://vel.gg/",
-  title: "BO1",
-  skipRewrite: true
+}
+};
 }
 };
