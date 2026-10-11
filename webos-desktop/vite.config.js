@@ -449,7 +449,11 @@ if (isSingleFile) {
 
 export default defineConfig({
   // GitHub Pages project site: https://tysonbwchs.github.io/YukiOS/
-  base: isSingleFile || isElectronBuild ? "./" : "/YukiOS/",
+base: isSingleFile || isElectronBuild
+  ? "./"
+  : process.env.CF_PAGES
+    ? "/"
+    : "/YukiOS/",
   plugins,
   server: {
     host: "127.0.0.1",
