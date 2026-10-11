@@ -1918,10 +1918,10 @@ export const appMap = {
     skipRewrite: true
   },
   nzPortable: {
-    type: "game",
-    url: "/YukiOS/nzp.html",
-    icon: "https://nzp-team.github.io/nzportable.ico",
-    title: "NZ: Portable",
-    skipRewrite: true
-  }
+  type: "game",
+  url: "https://hactgmz.pages.dev/nzp.html",
+  icon: "https://nzp-team.github.io/nzportable.ico",
+  title: "NZ: Portable",
+  skipRewrite: true
+}
 };
