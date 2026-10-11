@@ -1924,11 +1924,9 @@ export const appMap = {
   title: "NZ: Portable",
   skipRewrite: true
 },
-
-
 bo1: {
   type: "game",
-  url: "/bo1.html",
+  url: "https://vel.gg/",
   title: "BO1",
   skipRewrite: true
 }
