@@ -1917,11 +1917,18 @@ export const appMap = {
     title: "Gambonanza",
     skipRewrite: true
   },
-  nzPortable: {
+ nzPortable: {
   type: "game",
   url: "https://hactgmz.pages.dev/nzp.html",
   icon: "https://nzp-team.github.io/nzportable.ico",
   title: "NZ: Portable",
+  skipRewrite: true
+},
+
+bo1: {
+  type: "game",
+  url: "https://hactgmz.pages.dev/bo1.html",
+  title: "BO1",
   skipRewrite: true
 }
 };
