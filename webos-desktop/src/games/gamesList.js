@@ -1917,10 +1917,9 @@ export const appMap = {
     title: "Gambonanza",
     skipRewrite: true
   },
-
   nzPortable: {
     type: "game",
-    url: "/nzp.html",
+    url: "/YukiOS/nzp.html",
     icon: "https://nzp-team.github.io/nzportable.ico",
     title: "NZ: Portable",
     skipRewrite: true
