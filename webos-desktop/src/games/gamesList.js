@@ -1925,9 +1925,10 @@ export const appMap = {
   skipRewrite: true
 },
 
+
 bo1: {
   type: "game",
-  url: "https://hactgmz.pages.dev/bo1.html",
+  url: "/bo1.html",
   title: "BO1",
   skipRewrite: true
 }
