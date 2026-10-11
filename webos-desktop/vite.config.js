@@ -1,3 +1,4 @@
+
 import { defineConfig } from "vite";
 import { nodePolyfills } from "vite-plugin-node-polyfills";
 import { viteSingleFile } from "vite-plugin-singlefile";
@@ -43,6 +44,7 @@ function readPackageMeta(pkgPath) {
     return null;
   }
 }
+
 function collectPackageLicenses() {
   const entries = [];
 
@@ -397,9 +399,11 @@ const plugins = [
   papirusDataPlugin(),
   faviconBundlePlugin()
 ];
+
 if (isSingleFile) {
   plugins.unshift(viteSingleFile());
 }
+
 if (isVisualize) {
   plugins.push({
     name: "bundle-stats",
@@ -426,6 +430,7 @@ if (isVisualize) {
     }
   });
 }
+
 plugins.push(staticCdnRewrite());
 plugins.push(removeCosmicFolder());
 plugins.push(pageGenerator());
@@ -437,12 +442,14 @@ const baseOutput = {
   chunkFileNames: "assets/[name].[hash].js",
   assetFileNames: "assets/[name].[hash][extname]"
 };
+
 if (isSingleFile) {
   baseOutput.inlineDynamicImports = true;
 }
 
 export default defineConfig({
-  base: isSingleFile || isElectronBuild ? "./" : "/",
+  // GitHub Pages project site: https://tysonbwchs.github.io/YukiOS/
+  base: isSingleFile || isElectronBuild ? "./" : "/YukiOS/",
   plugins,
   server: {
     host: "127.0.0.1",
