@@ -1916,5 +1916,13 @@ export const appMap = {
     icon: "/static/icons/gambonanza.webp",
     title: "Gambonanza",
     skipRewrite: true
+  },
+
+  nzPortable: {
+    type: "game",
+    url: "/nzp.html",
+    icon: "https://nzp-team.github.io/nzportable.ico",
+    title: "NZ: Portable",
+    skipRewrite: true
   }
 };
