@@ -4,7 +4,7 @@ export const DEFAULT_WISP_URL = "wss://probuildingsupplies.com/w/";
 
 export const WISP_SERVERS = [
   { name: "Probuilding Wisp", url: DEFAULT_WISP_URL },
-  { name: "Mercury Wisp", url: "wss://wisp.mercurywork.shop/" },
+  { name: "Mercury Wisp", url: "wss://hurt-agata-liventcord-api-7072e9a6.koyeb.app" },
   {
     name: "Reeyuki Wisp",
     url: "wss://hurt-agata-liventcord-api-7072e9a6.koyeb.app/",
