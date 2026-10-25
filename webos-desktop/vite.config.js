@@ -5,7 +5,13 @@ import { systemLibraryPlugin } from "./plugins/systemLibraryPlugin.js";
 import { iconRegistryPlugin } from "./plugins/iconRegistryPlugin.js";
 import { papirusDataPlugin } from "./plugins/papirusDataPlugin.js";
 import { execSync, spawnSync } from "child_process";
-import { readFileSync, writeFileSync, existsSync, rmSync, mkdirSync } from "fs";
+import {
+  readFileSync,
+  writeFileSync,
+  existsSync,
+  rmSync,
+  mkdirSync,
+} from "fs";
 import { resolve, join, dirname } from "path";
 import dns from "dns";
 
@@ -526,7 +532,9 @@ if (isSingleFile) {
 }
 
 export default defineConfig({
-  base: isSingleFile || isElectronBuild ? "./" : "/YukiOS/",
+  base: isSingleFile || isElectronBuild
+    ? "./"
+    : (process.env.VITE_BASE_PATH || "/YukiOS/"),
   plugins,
   server: {
     host: "127.0.0.1",
