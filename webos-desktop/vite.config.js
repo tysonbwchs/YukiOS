@@ -47,6 +47,7 @@ function readPackageMeta(pkgPath) {
     return null;
   }
 }
+
 function collectPackageLicenses() {
   const entries = [];
 
@@ -472,9 +473,11 @@ const plugins = [
   papirusDataPlugin(),
   faviconBundlePlugin(),
 ];
+
 if (isSingleFile) {
   plugins.unshift(viteSingleFile());
 }
+
 if (isVisualize) {
   plugins.push({
     name: "bundle-stats",
@@ -487,7 +490,7 @@ if (isVisualize) {
             .sort(([, a], [, b]) => b.renderedLength - a.renderedLength)
             .map(([modPath, mod]) => {
               const size = mod.renderedLength || 0;
-              const pct = ((size / total) * 100).toFixed(2);
+              const pct = ((mod.renderedLength || 0) / total * 100).toFixed(2);
               return `${String(pct).padStart(6)}% ${String(size).padStart(9)} B  ${modPath}`;
             });
           lines.push(`\n=== ${fileName} (${total} B) ===`);
@@ -505,6 +508,7 @@ if (isVisualize) {
     },
   });
 }
+
 plugins.push(staticCdnRewrite());
 plugins.push(removeCosmicFolder());
 plugins.push(pageGenerator());
@@ -516,12 +520,13 @@ const baseOutput = {
   chunkFileNames: "assets/[name].[hash].js",
   assetFileNames: "assets/[name].[hash][extname]",
 };
+
 if (isSingleFile) {
   baseOutput.inlineDynamicImports = true;
 }
 
 export default defineConfig({
-  base: isSingleFile || isElectronBuild ? "./" : "/",
+  base: isSingleFile || isElectronBuild ? "./" : "/YukiOS/",
   plugins,
   server: {
     host: "127.0.0.1",
